@@ -11,26 +11,14 @@ import {
   Left,
   Body
 } from "native-base";
-import TabOne from "./screens/tab/tabOne";
-import TabTwo from "./screens/tab/tabTwo";
-import TabThree from "./screens/tab/tabThree";
+import TabOne from "./screens/tabOne";
+import TabTwo from "./screens/tabTwo";
+import TabThree from "./screens/tabThree";
 
 class App extends Component {
   render() {
     return (
       <Container>
-        <Header hasTabs>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title> Basic Tabs</Title>
-          </Body>
-          <Right />
-        </Header>
-
         <Tabs>
           <Tab heading="Tab1">
             <TabOne />
