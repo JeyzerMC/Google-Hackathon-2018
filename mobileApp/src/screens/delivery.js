@@ -53,7 +53,7 @@ export default class Delivery extends Component {
               <Row key={index}>
                 <Card>
                   <CardItem button onPress={() => this.addPeopleFromStore(value.store)}>
-                    <Thumbnail medium source={value}/>
+                    <Thumbnail medium source={{uri: value.url}}/>
                   </CardItem>
                 </Card>
               </Row>
