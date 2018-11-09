@@ -1,25 +1,31 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Tabs,
-  Tab} from "native-base";
-import TabOne from "./screens/tabOne";
-import TabTwo from "./screens/tabTwo";
-import TabThree from "./screens/tabThree";
+import { Container, Tabs, Tab, TabHeading, View, Text, Icon } from "native-base";
+import Lists from "./screens/lists";
+import Primary from "./screens/primary";
+import Delivery from "./screens/delivery";
 
 class App extends Component {
   render() {
     return (
       <Container>
         <Tabs>
-          <Tab heading="Tab1">
-            <TabOne />
+          <Tab heading={
+            <TabHeading>
+              <View>
+                <Icon name="briefcase" />
+              </View>
+              <View>
+                <Text>Tab Text</Text>
+              </View>
+            </TabHeading>
+          }>
+            <Lists />
           </Tab>
-          <Tab heading="Tab2">
-            <TabTwo />
+          <Tab heading="Current">
+            <Primary />
           </Tab>
-          <Tab heading="Tab3">
-            <TabThree />
+          <Tab heading="Delivery">
+            <Delivery />
           </Tab>
         </Tabs>
       </Container>
