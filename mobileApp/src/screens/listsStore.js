@@ -35,6 +35,149 @@ class ListsStores {
           items: []
         },
       ];
+
+      @observable deliveries =    {
+          costco: [
+            {
+              name: "Jean",
+              itemNb: 3,
+              distance: 8,
+            },
+            {
+              name: "Frank",
+              itemNb: 3,
+              distance: 8,
+            },
+            {
+              name: "Audrey",
+              itemNb: 3,
+              distance: 8,
+            },
+            {
+              name: "Labine",
+              itemNb: 3,
+              distance: 8,
+            },
+            {
+              name: "Laurence",
+              itemNb: 3,
+              distance: 8,
+            },
+            {
+              name: "Mehdi",
+              itemNb: 3,
+              distance: 8,
+            },
+          ],
+        iga: [
+          {
+            name: "Jean",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Frank",
+            itemNb: 3,
+            distance: 8,
+          },
+        ],
+
+        maxi: [
+          {
+            name: "Jean",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Frank",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Audrey",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Labine",
+            itemNb: 3,
+            distance: 8,
+          },
+        ],
+
+        walmart: [
+          {
+            name: "Jean",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Frank",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Audrey",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Labine",
+            itemNb: 3,
+            distance: 8,
+          },
+        ],
+
+        superC: [
+          {
+            name: "Jean",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Frank",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Audrey",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Labine",
+            itemNb: 3,
+            distance: 8,
+          },
+          
+        ],
+
+        metro: [
+          {
+            name: "Jean",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Frank",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Audrey",
+            itemNb: 3,
+            distance: 8,
+          },
+          {
+            name: "Labine",
+            itemNb: 3,
+            distance: 8,
+          },
+          
+        ],
+        
+
+      }
 }
 
 const listsStores = new ListsStores();
