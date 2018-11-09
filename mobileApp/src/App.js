@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Tabs locked={true} tabBarPosition="bottom">
+        <Tabs tabBarPosition="bottom">
           <Tab heading="Lists">
             <Lists />
           </Tab>
