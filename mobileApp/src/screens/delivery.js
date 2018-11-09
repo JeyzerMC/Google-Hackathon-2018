@@ -1,4 +1,4 @@
-import React, { Component, View, TouchableOpacity } from "react";
+import React, { Component } from "react";
 import { Content, Card, CardItem, Text, Body, Thumbnail, Grid, Col, Row } from "native-base";
 import listsStores from "./listsStore";
 import { observable } from "mobx";
@@ -11,10 +11,10 @@ export default class Delivery extends Component {
   people = [];
 
 
-  addPeopleFromStore (store) {
+  addPeopleFromStore(store) {
     this.people = listsStores.deliveries[store];
   }
-  
+
   render() {
     const uris = [
       { store: "costco", url: "https://cdn.iconscout.com/icon/free/png-256/costco-282448.png" },
@@ -42,10 +42,7 @@ export default class Delivery extends Component {
                 key={index}>
                 <Card>
                   <CardItem button onPress={() => this.addPeopleFromStore(value.store)}>
-                    <Thumbnail medium
-                      source={value}
-                    >
-                    </Thumbnail>
+                    <Thumbnail medium source={{uri: value.url}}/>
                   </CardItem>
                 </Card>
               </Row>
@@ -56,28 +53,25 @@ export default class Delivery extends Component {
               <Row key={index}>
                 <Card>
                   <CardItem button onPress={() => this.addPeopleFromStore(value.store)}>
-                    <Thumbnail medium
-                      source={value}>
-
-                    </Thumbnail>
+                    <Thumbnail medium source={value}/>
                   </CardItem>
                 </Card>
               </Row>
             )}
           </Col>
         </Grid>
-              
-       {this.people.map((value, index) =>
-         <Card>
-         <CardItem button>
-         <Text>
-           {value.name}{"\n"}
-           {value.itemNb} items{"\n"}
-           {value.distance} km from you
+
+        {this.people.map((value, index) =>
+          <Card key={index}>
+            <CardItem button>
+              <Text>
+                {value.name}{"\n"}
+                {value.itemNb} items{"\n"}
+                {value.distance} km from you
           </Text>
-         </CardItem>
-       </Card>
-       )}
+            </CardItem>
+          </Card>
+        )}
       </Content>
     );
   }
