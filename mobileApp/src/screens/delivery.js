@@ -71,8 +71,10 @@ export default class Delivery extends Component {
          <Card>
          <CardItem button>
          <Text>
-           WASSUp
-                    </Text>
+           {value.name}{"\n"}
+           {value.itemNb} items{"\n"}
+           {value.distance} km from you
+          </Text>
          </CardItem>
        </Card>
        )}

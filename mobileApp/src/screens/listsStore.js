@@ -40,45 +40,45 @@ class ListsStores {
           costco: [
             {
               name: "Jean",
-              itemNb: 3,
-              distance: 8,
+              itemNb: 1,
+              distance: 56,
             },
             {
               name: "Frank",
-              itemNb: 3,
-              distance: 8,
+              itemNb: 5,
+              distance: 4,
             },
             {
               name: "Audrey",
-              itemNb: 3,
-              distance: 8,
+              itemNb: 4,
+              distance: 1,
             },
             {
               name: "Labine",
-              itemNb: 3,
-              distance: 8,
+              itemNb: 7,
+              distance: 9,
             },
             {
               name: "Laurence",
-              itemNb: 3,
-              distance: 8,
+              itemNb: 9,
+              distance: 69,
             },
             {
               name: "Mehdi",
               itemNb: 3,
-              distance: 8,
+              distance: 18,
             },
           ],
         iga: [
           {
             name: "Jean",
-            itemNb: 3,
-            distance: 8,
+            itemNb: 13,
+            distance: 56,
           },
           {
-            name: "Frank",
-            itemNb: 3,
-            distance: 8,
+            name: "Mehdi",
+            itemNb: 5,
+            distance: 18,
           },
         ],
 
@@ -86,92 +86,91 @@ class ListsStores {
           {
             name: "Jean",
             itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Frank",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Audrey",
-            itemNb: 3,
-            distance: 8,
+            distance: 56,
           },
           {
             name: "Labine",
-            itemNb: 3,
-            distance: 8,
+            itemNb: 5,
+            distance: 9,
+          },
+          {
+            name: "Laurence",
+            itemNb: 7,
+            distance: 69,
           },
         ],
 
         walmart: [
-          {
-            name: "Jean",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Frank",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Audrey",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Labine",
-            itemNb: 3,
-            distance: 8,
-          },
+           {
+              name: "Jean",
+              itemNb: 1,
+              distance: 56,
+            },
+            {
+              name: "Frank",
+              itemNb: 5,
+              distance: 4,
+            },
+            {
+              name: "Audrey",
+              itemNb: 4,
+              distance: 1,
+            },
+            {
+              name: "Labine",
+              itemNb: 7,
+              distance: 9,
+            },
+            {
+              name: "Laurence",
+              itemNb: 9,
+              distance: 69,
+            },
+            {
+              name: "Mehdi",
+              itemNb: 3,
+              distance: 18,
+            },
         ],
 
         superC: [
           {
-            name: "Jean",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
             name: "Frank",
-            itemNb: 3,
-            distance: 8,
+            itemNb: 6,
+            distance: 4,
           },
           {
             name: "Audrey",
-            itemNb: 3,
-            distance: 8,
+            itemNb: 4,
+            distance: 1,
           },
           {
             name: "Labine",
-            itemNb: 3,
-            distance: 8,
+            itemNb: 7,
+            distance: 9,
           },
-          
+          {
+            name: "Laurence",
+            itemNb: 2,
+            distance: 69,
+          },
         ],
 
         metro: [
           {
-            name: "Jean",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Frank",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
-            name: "Audrey",
-            itemNb: 3,
-            distance: 8,
-          },
-          {
             name: "Labine",
-            itemNb: 3,
-            distance: 8,
+            itemNb: 2,
+            distance: 9,
+          },
+          {
+            name: "Laurence",
+            itemNb: 1,
+            distance: 69,
+          },
+          {
+            name: "Mehdi",
+            itemNb: 4,
+            distance: 18,
           },
           
         ],
