@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {
-  Content, View, TabHeading, Thumbnail, Tabs, Tab, Text,
-  Card, CardItem, Button, Icon, Left, Right
+  Content, View, TabHeading, Thumbnail, Tabs, Tab, Item, Input,
+  Card, CardItem, Button, Icon, Grid, Col
 } from "native-base";
 import { observer } from "mobx-react/native";
 import listsStores from "./listsStore";
@@ -12,7 +12,7 @@ export default class Lists extends Component {
   render() {
     return (
       <Content>
-        <Tabs locked={true} onChangeTab={({ i, ref }) => { listsStores.currentPage = i; }}>
+        <Tabs locked={true} onChangeTab={({ i }) => { listsStores.currentPage = i; }}>
           {listsStores.lists.map((value, index) =>
             <Tab key={index} heading={
               <TabHeading>
@@ -24,21 +24,18 @@ export default class Lists extends Component {
               {value.items.map((value2, index2) =>
                 <Card key={index2}>
                   <CardItem>
-                    <Left>
-                      <Text>
-                        {value2}
-                      </Text>
-                    </Left>
-                    <Right>
-                      <Button rounded>
-                        <Icon name="create" />
-                      </Button>
-                    </Right>
-                    <Right>
-                      <Button rounded>
-                        <Icon name="trash" />
-                      </Button>
-                    </Right>
+                    <Grid>
+                      <Col size={80}>
+                        <Item>
+                          <Input onChangeText={(e) => {value2.item = e;}} placeholder="Item name" value={value2.item}/>
+                        </Item>
+                      </Col>
+                      <Col size={20}>
+                        <Button rounded onPress={() => {value.items.splice(index2, 1);}}>
+                          <Icon name="trash" />
+                        </Button>
+                      </Col>
+                    </Grid>
                   </CardItem>
                 </Card>
               )}

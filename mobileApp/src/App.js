@@ -18,7 +18,7 @@ class App extends Component {
               containerStyle={{}}
               style={{ backgroundColor: "#5067FF" }}
               position="bottomRight"
-              onPress={() => {listsStores.lists[listsStores.currentPage].items.push("allo");}}>
+              onPress={() => {listsStores.lists[listsStores.currentPage].items.push({item: ""});}}>
               <Icon name="add" />
             </Fab>
           </Tab>
