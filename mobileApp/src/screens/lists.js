@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {
   Content, View, TabHeading, Thumbnail, Tabs, Tab, Text,
-  Card, CardItem, Body
+  Card, CardItem, Button, Icon, Left, Right
 } from "native-base";
 import { observer } from "mobx-react/native";
 import listsStores from "./listsStore";
@@ -12,7 +12,7 @@ export default class Lists extends Component {
   render() {
     return (
       <Content>
-        <Tabs onChangeTab={({i, ref}) => {listsStores.currentPage = i;}}>
+        <Tabs locked={true} onChangeTab={({ i, ref }) => { listsStores.currentPage = i; }}>
           {listsStores.lists.map((value, index) =>
             <Tab key={index} heading={
               <TabHeading>
@@ -24,11 +24,21 @@ export default class Lists extends Component {
               {value.items.map((value2, index2) =>
                 <Card key={index2}>
                   <CardItem>
-                    <Body>
+                    <Left>
                       <Text>
                         {value2}
                       </Text>
-                    </Body>
+                    </Left>
+                    <Right>
+                      <Button rounded>
+                        <Icon name="create" />
+                      </Button>
+                    </Right>
+                    <Right>
+                      <Button rounded>
+                        <Icon name="trash" />
+                      </Button>
+                    </Right>
                   </CardItem>
                 </Card>
               )}
