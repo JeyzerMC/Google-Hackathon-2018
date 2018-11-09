@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Container, Tabs, Tab } from "native-base";
+import { Container, Tabs, Tab, Fab, Icon } from "native-base";
 import Lists from "./screens/lists";
 import Primary from "./screens/primary";
 import Delivery from "./screens/delivery";
+import listsStores from "./screens/listsStore";
 
 class App extends Component {
   render() {
@@ -11,6 +12,15 @@ class App extends Component {
         <Tabs tabBarPosition="bottom">
           <Tab heading="Lists">
             <Lists />
+            <Fab
+              active={true}
+              direction="up"
+              containerStyle={{}}
+              style={{ backgroundColor: "#5067FF" }}
+              position="bottomRight"
+              onPress={() => {listsStores.lists[listsStores.currentPage].items.push("allo");}}>
+              <Icon name="add" />
+            </Fab>
           </Tab>
           <Tab heading="Current">
             <Primary />

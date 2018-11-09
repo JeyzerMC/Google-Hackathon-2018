@@ -1,31 +1,37 @@
 import React, { Component } from "react";
-import { Content, View, TabHeading, Thumbnail, Tabs, Tab, Text, ScrollableTab } from "native-base";
+import {
+  Content, View, TabHeading, Thumbnail, Tabs, Tab, Text,
+  Card, CardItem, Body
+} from "native-base";
+import { observer } from "mobx-react/native";
+import listsStores from "./listsStore";
 
+@observer
 export default class Lists extends Component {
-  render() {
-    const uris = {
-      costco: "https://cdn.iconscout.com/icon/free/png-256/costco-282448.png",
-      iga: "https://www.jobillico.com/medias/logo-entreprise/0/0/exp_logo_20974_fr_2018_07_04_10_27_42.jpg",
-      superC: "https://www.placedeville.com/app/uploads/sites/11/2018/04/SuperC_Web.png",
-      metro: "https://www.metro.ca/userfiles/image/publicite/logo-metro.png",
-      walmart: "https://cdn.iconscout.com/icon/free/png-256/walmart-282199.png",
-      maxi: "https://www.circulaire-en-ligne.ca/wp-content/uploads/Circulaire-en-ligne-Maxi-et-Maxi-Cie.jpg",
-    };
 
+  render() {
     return (
       <Content>
-        <Tabs renderTabBar={() => <ScrollableTab />}>
-          {Object.entries(uris).map(([key, value]) =>
-            <Tab key={key} heading={
+        <Tabs onChangeTab={({i, ref}) => {listsStores.currentPage = i;}}>
+          {listsStores.lists.map((value, index) =>
+            <Tab key={index} heading={
               <TabHeading>
                 <View>
-                  <Thumbnail small source={{ uri: value }} />
+                  <Thumbnail small source={{ uri: value.url }} />
                 </View>
               </TabHeading>
             }>
-              <Text>
-                {key}
-              </Text>
+              {value.items.map((value2, index2) =>
+                <Card key={index2}>
+                  <CardItem>
+                    <Body>
+                      <Text>
+                        {value2}
+                      </Text>
+                    </Body>
+                  </CardItem>
+                </Card>
+              )}
             </Tab>
           )}
         </Tabs>
