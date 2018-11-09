@@ -17,6 +17,11 @@ export default class Delivery extends Component {
 
 
   confirm(request) {
+    Toast.show({
+      text: "You have selected " + request.name
+    });
+    console.log(request)
+    listsStores.currentRequest = request;
   }
   render() {
     const uris = [
@@ -78,14 +83,12 @@ export default class Delivery extends Component {
                       {value.distance} km from you{"\n"}
                       Estimated cost: {value.estimatedPrice} $
           </Text>
-
                   </CardItem>
                 </Row>
               </Col>
               <Col>
                 <Row>
-                  <Button button onPress={() =>     Toast.show({text: "Confimed"})
-}>
+                  <Button button onPress={() => this.confirm(value)}>
                     <Text>
                       Confirm
                     </Text>

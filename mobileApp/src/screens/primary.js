@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Content, Card, CardItem, Text, Body } from "native-base";
 import listsStores from "./listsStore";
+import Button from "../theme/components/Button";
 
 export default class Primary extends Component {
   render() {
@@ -10,21 +11,16 @@ export default class Primary extends Component {
           <CardItem>
             <Body>
               <Text>
-                {this.listsStores.currentRequest}
+                {listsStores.currentRequest.name ? 
+                listsStores.currentRequest.name : 
+                "You don't have any pending deliveries"}
               </Text>
             </Body>
           </CardItem>
         </Card>
-        <Card style={{ flex: 0 }}>
-          <CardItem>
-            <Body>
-              <Text>
-                NativeBase gives you the potential of building applications that
-                run on iOS and Android using a single codebase.
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
+        <Button>
+          
+        </Button>
       </Content>
     );
   }
