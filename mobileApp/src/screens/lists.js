@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Content, Button, Thumbnail, Segment } from "native-base";
+import { Content, View, TabHeading, Thumbnail, Tabs, Tab, Text, ScrollableTab } from "native-base";
 
 export default class Lists extends Component {
   render() {
@@ -11,16 +11,24 @@ export default class Lists extends Component {
       superC: "https://www.placedeville.com/app/uploads/sites/11/2018/04/SuperC_Web.png",
       maxi: "https://www.circulaire-en-ligne.ca/wp-content/uploads/Circulaire-en-ligne-Maxi-et-Maxi-Cie.jpg",
     };
+
     return (
       <Content>
-        <Segment>
-          <Button first>
-            <Thumbnail large source={{ uri: uris.costco }} />
-          </Button>
-          <Button last>
-            <Thumbnail large source={{ uri: uris.costco }} />
-          </Button>
-        </Segment>
+        <Tabs renderTabBar={() => <ScrollableTab />}>
+          {Object.keys(uris).map((key) =>
+            <Tab key={key} heading={
+              <TabHeading>
+                <View>
+                  <Thumbnail small source={{ uri: uris[key] }} />
+                </View>
+              </TabHeading>
+            }>
+              <Text>
+                {key}
+              </Text>
+            </Tab>
+          )}
+        </Tabs>
       </Content>
     );
   }
