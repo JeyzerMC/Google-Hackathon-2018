@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Content, Card, CardItem, Text, Body } from "native-base";
+import listsStores from "./listsStore";
 
 export default class Primary extends Component {
   render() {
@@ -9,9 +10,7 @@ export default class Primary extends Component {
           <CardItem>
             <Body>
               <Text>
-                NativeBase is a free and open source framework that enables
-                developers to build high-quality mobile apps using React Native
-                iOS and Android apps with a fusion of ES6.
+                {this.listsStores.currentRequest}
               </Text>
             </Body>
           </CardItem>

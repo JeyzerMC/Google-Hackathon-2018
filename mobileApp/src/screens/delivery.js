@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Content, Card, CardItem, Text, Body, Thumbnail, Grid, Col, Row } from "native-base";
+import { Content, Card, CardItem, Text, Body, Thumbnail, Grid, Col, Row, Button, Left, Right, Toast } from "native-base";
 import listsStores from "./listsStore";
 import { observable } from "mobx";
 import { observer } from "mobx-react/native";
@@ -15,6 +15,9 @@ export default class Delivery extends Component {
     this.people = listsStores.deliveries[store];
   }
 
+
+  confirm(request) {
+  }
   render() {
     const uris = [
       { store: "costco", url: "https://cdn.iconscout.com/icon/free/png-256/costco-282448.png" },
@@ -42,7 +45,7 @@ export default class Delivery extends Component {
                 key={index}>
                 <Card>
                   <CardItem button onPress={() => this.addPeopleFromStore(value.store)}>
-                    <Thumbnail medium source={{uri: value.url}}/>
+                    <Thumbnail medium source={{ uri: value.url }} />
                   </CardItem>
                 </Card>
               </Row>
@@ -53,7 +56,7 @@ export default class Delivery extends Component {
               <Row key={index}>
                 <Card>
                   <CardItem button onPress={() => this.addPeopleFromStore(value.store)}>
-                    <Thumbnail medium source={{uri: value.url}}/>
+                    <Thumbnail medium source={{ uri: value.url }} />
                   </CardItem>
                 </Card>
               </Row>
@@ -62,15 +65,36 @@ export default class Delivery extends Component {
         </Grid>
 
         {this.people.map((value, index) =>
+
           <Card key={index}>
-            <CardItem button>
-              <Text>
-                {value.name}{"\n"}
-                {value.itemNb} items{"\n"}
-                {value.distance} km from you
+            <Grid>
+              <Col>
+                <Row>
+
+                  <CardItem>
+                    <Text>
+                      {value.name}{"\n"}
+                      {value.itemNb} items{"\n"}
+                      {value.distance} km from you{"\n"}
+                      Estimated cost: {value.estimatedPrice} $
           </Text>
-            </CardItem>
+
+                  </CardItem>
+                </Row>
+              </Col>
+              <Col>
+                <Row>
+                  <Button button onPress={() =>     Toast.show({text: "Confimed"})
+}>
+                    <Text>
+                      Confirm
+                    </Text>
+                  </Button>
+                </Row>
+              </Col>
+            </Grid>
           </Card>
+
         )}
       </Content>
     );
