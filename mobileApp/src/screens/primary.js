@@ -18,9 +18,6 @@ export default class Primary extends Component {
             </Body>
           </CardItem>
         </Card>
-        <Button>
-          
-        </Button>
       </Content>
     );
   }
